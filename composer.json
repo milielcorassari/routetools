@@ -1,0 +1,26 @@
+{
+    "name": "fundament/servicetools",
+    "description": "Bank management tool",
+    "minimum-stability": "stable",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Miliel R de L Corassari",
+            "email": "milielcorassari@gmail.com",
+            "role": "Developer",
+            "homepage": "http://fundament.com.br"
+        }
+    ],
+    "config": {
+        "vendor-dir": "vendor"
+    },
+    "autoload": {
+        "psr-4": {
+            "Fundament\\ServiceTools\\":"src"
+        }
+    },
+    "require": {
+        "php": "^7.2",
+        "ext-pdo": "*"
+    }
+}
