@@ -3,14 +3,14 @@
 namespace Fundament\RouteTools;
 
 /**
- * Class Fundament Dispatch
+ * Class Fundament Operaction
  *
  * @author Miliel R de L Corassari
  * @package Fundament\RouteTools
  */
-abstract class Dispatch
+abstract class Execution
 {
-    use RouterTrait;
+    use Operaction;
 
     /** @var null|array */
     protected $route;
@@ -46,7 +46,7 @@ abstract class Dispatch
     public const NOT_IMPLEMENTED = 501;
 
     /**
-     * Dispatch constructor.
+     * Operaction constructor.
      *
      * @param string $projectUrl
      * @param null|string $separator
@@ -69,9 +69,9 @@ abstract class Dispatch
 
     /**
      * @param null|string $namespace
-     * @return Dispatch
+     * @return Operaction
      */
-    public function namespace(?string $namespace): Dispatch
+    public function namespace(?string $namespace): Operaction
     {
         $this->namespace = ($namespace ? ucwords($namespace) : null);
         return $this;
@@ -79,9 +79,9 @@ abstract class Dispatch
 
     /**
      * @param null|string $group
-     * @return Dispatch
+     * @return Operaction
      */
-    public function group(?string $group): Dispatch
+    public function group(?string $group): Operaction
     {
         $this->group = ($group ? str_replace("/", "", $group) : null);
         return $this;
@@ -106,7 +106,7 @@ abstract class Dispatch
     /**
      * @return bool
      */
-    public function dispatch(): bool
+    public function Operaction(): bool
     {
         if (empty($this->routes) || empty($this->routes[$this->httpMethod])) {
             $this->error = self::NOT_IMPLEMENTED;

@@ -2,7 +2,7 @@
 
 namespace Fundament\RouteTools;
 
-trait RouterTrait
+trait Operaction
 {
     /** @var array */
     protected $routes;

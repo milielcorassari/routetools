@@ -8,7 +8,7 @@ namespace Fundament\RouteTools;
  * @author Miliel R de L Corassari
  * @package Fundament\RouteTools
  */
-class Router extends Dispatch
+class RouteTools extends Execution
 {
     /**
      * Router constructor.
