@@ -3,7 +3,7 @@
 namespace Fundament\RouteTools;
 
 /**
- * Class Fundament Router
+ * Class Fundament RouteTools
  *
  * @author Miliel R de L Corassari
  * @package Fundament\RouteTools
@@ -11,7 +11,7 @@ namespace Fundament\RouteTools;
 class RouteTools extends Execution
 {
     /**
-     * Router constructor.
+     * RouteTools constructor.
      *
      * @param string $projectUrl
      * @param null|string $separator

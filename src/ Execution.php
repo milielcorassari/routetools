@@ -3,7 +3,7 @@
 namespace Fundament\RouteTools;
 
 /**
- * Class Fundament Operaction
+ * Class Fundament Execution
  *
  * @author Miliel R de L Corassari
  * @package Fundament\RouteTools
@@ -46,7 +46,7 @@ abstract class Execution
     public const NOT_IMPLEMENTED = 501;
 
     /**
-     * Operaction constructor.
+     * Execution constructor.
      *
      * @param string $projectUrl
      * @param null|string $separator
