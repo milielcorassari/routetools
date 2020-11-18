@@ -1,7 +1,6 @@
 {
     "name": "fundament/routetools",
     "description": "",
-    "minimum-stability": "stable",
     "license": "MIT",
     "authors": [
         {
@@ -11,16 +10,12 @@
             "homepage": "http://fundament.com.br"
         }
     ],
-    "config": {
-        "vendor-dir": "vendor"
-    },
     "autoload": {
         "psr-4": {
             "Fundament\\RouteTools\\":"src"
         }
     },
     "require": {
-        "php": "^7.2",
-        "ext-pdo": "*"
+        "php": "^7.2"
     }
 }
