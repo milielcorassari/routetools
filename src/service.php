@@ -1,6 +1,0 @@
-<?php
-
-    namespace Fundament\ServiceTools;
-
-    
-?>
