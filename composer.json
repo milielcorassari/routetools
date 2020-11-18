@@ -1,6 +1,6 @@
 {
-    "name": "fundament/servicetools",
-    "description": "Bank management tool",
+    "name": "fundament/routetools",
+    "description": "",
     "minimum-stability": "stable",
     "license": "MIT",
     "authors": [
@@ -16,7 +16,7 @@
     },
     "autoload": {
         "psr-4": {
-            "Fundament\\ServiceTools\\":"src"
+            "Fundament\\RouteTools\\":"src"
         }
     },
     "require": {
