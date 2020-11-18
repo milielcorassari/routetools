@@ -69,9 +69,9 @@ abstract class Execution
 
     /**
      * @param null|string $namespace
-     * @return Operaction
+     * @return Execution
      */
-    public function namespace(?string $namespace): Operaction
+    public function namespace(?string $namespace): Execution
     {
         $this->namespace = ($namespace ? ucwords($namespace) : null);
         return $this;
@@ -79,9 +79,9 @@ abstract class Execution
 
     /**
      * @param null|string $group
-     * @return Operaction
+     * @return Execution
      */
-    public function group(?string $group): Operaction
+    public function group(?string $group): Execution
     {
         $this->group = ($group ? str_replace("/", "", $group) : null);
         return $this;
@@ -106,7 +106,7 @@ abstract class Execution
     /**
      * @return bool
      */
-    public function Operaction(): bool
+    public function dispatch(): bool
     {
         if (empty($this->routes) || empty($this->routes[$this->httpMethod])) {
             $this->error = self::NOT_IMPLEMENTED;
