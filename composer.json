@@ -1,21 +1,15 @@
 {
-    "name": "fundament/routetools",
-    "description": "",
-    "license": "MIT",
-    "authors": [
-        {
-            "name": "Miliel R de L Corassari",
-            "email": "milielcorassari@gmail.com",
-            "role": "Developer",
-            "homepage": "http://fundament.com.br"
-        }
-    ],
-    "autoload": {
-        "psr-4": {
-            "Fundament\\RouteTools\\":"src"
-        }
-    },
-    "require": {
-        "php": "^7.2"
-    }
+	"name" : "fundament/routetools",
+	"license" : "MIT",
+	"authors" : [{
+			"name" : "Miliel R de L Corassari",
+			"email" : "milielcorassari@gmail.com",
+			"role" : "Developer"
+		}
+	],
+	"autoload" : {
+		"psr-4" : {
+			"Fundament\\RouteTools\\" : "src"
+		}
+	}
 }

@@ -1,18 +1,18 @@
-<?php
+<?php 
 
 namespace Fundament\RouteTools;
 
-trait Operaction
-{
+trait Operaction{
+    
     /** @var array */
     protected $routes;
-
+    
     /** @var string */
     protected $patch;
-
+    
     /** @var string */
     protected $httpMethod;
-
+    
     /**
      * @param string $name
      * @param array|null $data
@@ -29,7 +29,7 @@ trait Operaction
         }
         return null;
     }
-
+    
     /**
      * @param string $route
      * @param array|null $data
@@ -40,17 +40,17 @@ trait Operaction
             header("Location: {$name}");
             exit;
         }
-
+        
         if (filter_var($route, FILTER_VALIDATE_URL)) {
             header("Location: {$route}");
             exit;
         }
-
+        
         $route = (substr($route, 0, 1) == "/" ? $route : "/{$route}");
         header("Location: {$this->projectUrl}{$route}");
         exit;
     }
-
+    
     /**
      * @param string $method
      * @param string $route
@@ -62,16 +62,16 @@ trait Operaction
         if ($route == "/") {
             $this->addRoute($method, "", $handler, $name);
         }
-
+        
         preg_match_all("~\{\s* ([a-zA-Z_][a-zA-Z0-9_-]*) \}~x", $route, $keys, PREG_SET_ORDER);
         $routeDiff = array_values(array_diff(explode("/", $this->patch), explode("/", $route)));
-
+        
         $this->formSpoofing();
         $offset = ($this->group ? 1 : 0);
         foreach ($keys as $key) {
             $this->data[$key[1]] = ($routeDiff[$offset++] ?? null);
         }
-
+        
         $route = (!$this->group ? $route : "/{$this->group}{$route}");
         $data = $this->data;
         $namespace = $this->namespace;
@@ -85,11 +85,11 @@ trait Operaction
                 "data" => $data
             ];
         };
-
+        
         $route = preg_replace('~{([^}]*)}~', "([^/]+)", $route);
         $this->routes[$method][$route] = $router();
     }
-
+    
     /**
      * @param $handler
      * @param $namespace
@@ -99,7 +99,7 @@ trait Operaction
     {
         return (!is_string($handler) ? $handler : "{$namespace}\\" . explode($this->separator, $handler)[0]);
     }
-
+    
     /**
      * @param $handler
      * @return null|string
@@ -108,7 +108,7 @@ trait Operaction
     {
         return (!is_string($handler) ?: (explode($this->separator, $handler)[1] ?? null));
     }
-
+    
     /**
      * @param array $route_item
      * @param array|null $data
@@ -128,10 +128,10 @@ trait Operaction
             }
             $route = $this->process($route, $arguments, $params);
         }
-
+        
         return "{$this->projectUrl}{$route}";
     }
-
+    
     /**
      * @param string $route
      * @param array $arguments
@@ -144,3 +144,4 @@ trait Operaction
         return str_replace(array_keys($arguments), array_values($arguments), $route) . "{$params}";
     }
 }
+?>
